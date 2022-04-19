@@ -1,3 +1,3 @@
-themes = ['music', 'movies', 'politics', 'sports', 'fashion', 'food', 'technology']
+themes = ['music', 'movies', 'sports', 'fashion', 'food', 'technology']
 
 print(themes)
