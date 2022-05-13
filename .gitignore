@@ -2,8 +2,8 @@
 .DS_store
 
 # Ignore program generated media
-./video
-./audio
+/video
+/audio
 modules/img
 modules/video
 
