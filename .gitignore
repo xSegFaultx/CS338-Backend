@@ -1,0 +1,17 @@
+# Ignore Mac system files
+.DS_store
+
+# Ignore program generated media
+./video
+./audio
+modules/img
+modules/video
+
+# Ignore pyc
+.idea
+__pycache__
+
+
+# Ignore files related to API keys
+service_account.json
+.env
