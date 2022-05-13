@@ -1,0 +1,51 @@
+{"keywords": [
+    "birth" : {
+        "date": " visual",
+        "location": " landscape"
+    },
+    "childhood": {
+        "start_year": "time magazine person of the year",
+        "end_year": None,
+        "location": "",
+        "language": None
+    },
+    "school": {
+        "start_year": None,
+        "end_year": None,
+        "name": " logo",
+        "location": ""
+    },
+    "previous_home": {
+        "start_year": None,
+        "end_year": None,
+        "location": " landscape"
+    },
+    "previous_work": {
+        "start_year": None,
+        "end_year": None,
+        "name": " logo",
+        "position": " job picture",
+    },
+    "wedding": {
+        "spouse_name": None,
+        "wedding_date": None,
+        "location": " landscape"
+    },
+    "current_status": {
+        "age": None,
+        "location": "",
+        "occupation": " job picture",
+        "company": " logo"
+    },
+    "children": {
+        "number": None,
+        "child_name": "baby clipart",
+        "birth_date": None,
+        "location": " landscape"
+    },
+    "death": {
+        "death_data": " visual death",
+        "age": None,
+        "location": None
+    }]
+}
