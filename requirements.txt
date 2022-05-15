@@ -17,3 +17,6 @@ google-cloud-texttospeech==2.10.0
 flask-cors==3.0.10
 beautifulsoup4==4.9.3
 lxml==4.8.0
+geopy==2.2.0
+numpy==1.21.6
+Pillow==9.1.0

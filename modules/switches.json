@@ -1,0 +1,51 @@
+{
+    "birth": {
+        "date": true,
+        "location": true
+    },
+    "childhood": {
+        "start_year": true,
+        "end_year": false,
+        "location": true,
+        "language": false
+    },
+    "school": {
+        "start_year": false,
+        "end_year": false,
+        "name": true,
+        "location": true
+    },
+    "previous_home": {
+        "start_year": false,
+        "end_year": false,
+        "location": true
+    },
+    "previous_work": {
+        "start_year": false,
+        "end_year": false,
+        "name": true,
+        "position": true
+    },
+    "wedding": {
+        "spouse_name": false,
+        "wedding_date": false,
+        "location": true
+    },
+    "current_status": {
+        "age": false,
+        "location": true,
+        "occupation": true,
+        "company": true
+    },
+    "children": {
+        "number": false,
+        "child_name": true,
+        "birth_date": false,
+        "location": true
+    },
+    "death": {
+        "death_data": true,
+        "age": false,
+        "location": false
+    }
+}

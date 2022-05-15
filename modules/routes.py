@@ -1,10 +1,11 @@
 from flask import request, jsonify, send_file, make_response
 from modules import app
-from . import image_search
-from . import text_to_speech
-from . import custom_animations
+from modules import image_search
+from modules import text_to_speech
+from modules import custom_animations
 import os
 import json
+
 
 @app.route("/")
 def home():
@@ -12,18 +13,13 @@ def home():
     resp.headers['Access-Control-Allow-Origin'] = "*"
     return resp
 
-# input = [
-#         { "birth": { "date": "Augest 10, 1970", "location": "Bangkok, Thailand" }},
-#         { "school": { "name": "Harvard University", "start_date": "2015", "end_date": "2019", "location": "Massachusetts, Boston" }},
-#     ]
-
 
 @app.route("/video", methods=['GET', 'POST'])
 def images():
     data = json.loads(request.get_data())
     print(request)
     print(data)
-    
+
     if "input" not in data:
         resp = make_response("Please make sure the key is 'input'", 400)
         resp.headers['Access-Control-Allow-Origin'] = "*"
@@ -44,4 +40,3 @@ def images():
     resp.headers['Access-Control-Allow-Origin'] = "*"
 
     return resp
-    
