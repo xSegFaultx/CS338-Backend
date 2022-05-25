@@ -15,9 +15,7 @@ def construct_query(event_dict, event, sub_event):
     return query
 
 
-def birth_date_query(date):
-    # expected input format: Month DD, YYYY
-    year = date.split(",")[-1].strip()
+def birth_date_query(year):
     decade = util.get_decade(year)
     query = "{} infant portrait".format(decade)
     return query, "search"
@@ -39,8 +37,8 @@ def _landmark_query(location):
 
 
 def _map_query(location):
-    city, state, country = location.split(",")
-    return city.strip(), state.strip(), country.strip()
+    state, country = location.split(",")
+    return state.strip(), country.strip()
 
 
 def _event_query(date):
@@ -65,8 +63,8 @@ def birth_location_query(location):
 
 def childhood_location_query(location):
     # expect input format: City, State, Country
-    city, state, country = _map_query(location)
-    return [city, state, country], "map"
+    state, country = _map_query(location)
+    return [state, country], "map"
 
 
 def childhood_start_year_query(date):
@@ -90,7 +88,7 @@ def school_start_year_query(date):
 
 def school_location_query(location):
     # expect input format: City, State, Country
-    _, state, country = location.split(",")
+    state, country = location.split(",")
     return _landmark_query("{}, {}".format(state.strip(), country.strip())), "search"
 
 
@@ -104,7 +102,7 @@ def previous_work_position_query(name):
 
 def current_status_location_query(location):
     # expect input format: City, State, Country
-    _, state, country = location.split(",")
+    state, country = location.split(",")
     return _landmark_query("{}, {}".format(state.strip(), country.strip())), "search"
 
 
@@ -118,5 +116,5 @@ def current_status_company_query(name):
 
 def wedding_location_query(location):
     # expect input format: City, State, Country
-    _, state, country = location.split(",")
+    state, country = location.split(",")
     return _landmark_query("{}, {}".format(state.strip(), country.strip())), "search"

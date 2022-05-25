@@ -14,8 +14,8 @@ def _city2ll(city):
     return latitude, longitude
 
 
-def generate_single_location_map(city, state, country):
-    location = "{}, {}, {}".format(city, state, country)
+def generate_single_location_map(state, country):
+    location = "{}, {}".format(state, country)
     latitude, longitude = _city2ll(location)
     format_state = "+".join(state.strip().split())
     format_country = "+".join(country.strip().split())
@@ -23,8 +23,9 @@ def generate_single_location_map(city, state, country):
     size = "size=800x800"
     map_type = "maptype=roadmap"
     markers = "markers=color:red%7Clabel:%7C{},{}".format(latitude, longitude)
+    zoom = "zoom=7"
     key = "key={}".format(util.get_key("map"))
-    query_url = "{}{}&{}&{}&{}&{}".format(base_url, center, size, map_type, markers, key)
+    query_url = "{}{}&{}&{}&{}&{}&{}".format(base_url, center, size, map_type, markers, zoom,key)
     response = requests.get(query_url)
     if response.status_code == 200:
         map_image = response.content

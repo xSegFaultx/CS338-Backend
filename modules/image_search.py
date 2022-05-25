@@ -2,63 +2,6 @@ from collections import defaultdict, Counter
 from modules import movie_scrape
 from modules import smart_query, google_custom_search, map_generator, util
 
-# this dictionary is used to determine the search query for a given
-# input. 'None' indicates that we don't want to search for an image for this
-# input. An empty string, "", indicates that we want to search for an image,
-# but don't want to append anything to the query.
-SEARCH_MAP = {
-    "birth": {
-        "date": " visual",
-        "location": " landscape"
-        # "location": None # Will change later because the video animation can only support 2 pictures
-    },
-    "childhood": {
-        "start_year": "time magazine person of the year",
-        "end_year": None,
-        "location": "",
-        "language": None
-    },
-    "school": {
-        "start_year": None,
-        "end_year": None,
-        "name": " logo",
-        "location": ""
-    },
-    "previous_home": {
-        "start_year": None,
-        "end_year": None,
-        "location": " landscape"
-    },
-    "previous_work": {
-        "start_year": None,
-        "end_year": None,
-        "name": " logo",
-        "position": " job picture",
-    },
-    "wedding": {
-        "spouse_name": None,
-        "wedding_date": None,
-        "location": " landscape"
-    },
-    "current_status": {
-        "age": None,
-        "location": "",
-        "occupation": " job picture",
-        "company": " logo"
-    },
-    "children": {
-        "number": None,
-        "child_name": "baby clipart",
-        "birth_date": None,
-        "location": " landscape"
-    },
-    "death": {
-        "death_data": " visual death",
-        "age": None,
-        "location": None
-    },
-}
-
 
 def _generate_image(event_dict, event, sub_event):
     query, gen_method = smart_query.construct_query(event_dict, event, sub_event)
@@ -67,8 +10,8 @@ def _generate_image(event_dict, event, sub_event):
         if image:
             return image, file_ext
     elif gen_method == "map":
-        city, state, country = query
-        image = map_generator.generate_single_location_map(city, state, country)
+        state, country = query
+        image = map_generator.generate_single_location_map(state, country)
         if image:
             return image, "png"
     return None, None
@@ -90,6 +33,10 @@ def image_search(data):
             counter[event] += 1
             keys = list(val.keys())
             for sub_event in keys:
+                if _dict[event][sub_event] is None:
+                    continue
+                if _dict[event][sub_event] == "":
+                    continue
                 if not util.get_switches()[event][sub_event]:
                     continue
                 image, file_ext = _generate_image(_dict, event, sub_event)

@@ -1,4 +1,4 @@
-import image_search
+from modules import image_search
 import text_to_speech
 import custom_animations
 import os
@@ -9,16 +9,16 @@ import os
 def main():
     input = [
         {"name": {"first": "Ken", "last": "Griffin", "pronoun_1": "he", "pronoun_2": "his", "pronoun_3": "him"}},
-        {"birth": {"date": "October 15, 1968", "location": "Florida, USA"}},
-        {"childhood": {"location": "Boca Raton, Florida, USA", "start_year": "1968", "end_year": "1986"}},
+        {"birth": {"date": "", "location": "Florida, USA"}},
+        {"childhood": {"location": "Florida, USA", "start_year": "1968", "end_year": "1986"}},
         {"school": {"name": "Harvard College", "start_year": "1986", "end_year": "1989",
-                    "location": "Cambridge, Massachusetts, USA"}},
+                    "location": "Massachusetts, USA"}},
         {"previous_work": {"start_year": "1989", "end_year": "1990", "name": "Glenwood Capital Investments",
                            "position": "trader"}},
-        {"current_status": {"age": "53", "location": "Chicago, Illinois, USA", "occupation": "CEO",
+        {"current_status": {"age": "53", "location": "Illinois, USA", "occupation": "CEO",
                             "company": "Citadel LLC"}},
         {"wedding": {"wedding_date": "July 19, 2003", "spouse_name": "Anne Dias-Griffin",
-                     "location": "Chicago, Illinois, USA"}}
+                     "location": "Illinois, USA"}}
     ]
 
     image_paths = image_search.image_search(input)
