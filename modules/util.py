@@ -81,3 +81,4 @@ def save_image(image, file_ext, name):
         rgbimg.paste(img)
         rgbimg.save(file_path, format=img.format)
     print("SUCCESS")
+    return file_path

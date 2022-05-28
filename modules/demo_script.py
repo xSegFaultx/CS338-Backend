@@ -9,7 +9,7 @@ import os
 def main():
     input = [
         {"name": {"first": "Ken", "last": "Griffin", "pronoun_1": "he", "pronoun_2": "his", "pronoun_3": "him"}},
-        {"birth": {"date": "", "location": "Florida, USA"}},
+        {"birth": {"date": "1968", "location": "Florida, USA"}},
         {"childhood": {"location": "Florida, USA", "start_year": "1968", "end_year": "1986"}},
         {"school": {"name": "Harvard College", "start_year": "1986", "end_year": "1989",
                     "location": "Massachusetts, USA"}},
@@ -22,7 +22,7 @@ def main():
     ]
 
     image_paths = image_search.image_search(input)
-    # print(image_paths)
+    print(image_paths)
     # audio_paths = text_to_speech.text_to_speech(input)
     # FOR TESTING
     audio_paths = [

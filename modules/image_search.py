@@ -46,16 +46,13 @@ def image_search(data):
                 output_dict[f"{event}_{counter[event]}"].append(file_path)
 
                 # do movie search
-                """
                 if event == "birth" and sub_event == "date":
-                    year = int(search_str.split(",")[-1].strip())
+                    year = int(_dict[event][sub_event])
                     movie = movie_scrape.find_movie(year)
                     val["movie"] = movie
-                    images = google_img_search(movie + " poster")
-                    file_path = save_image(images, f"{event}_{movie}_{counter[event]}")
+                    image, file_ext = google_custom_search.get_image(movie + " poster")
+                    file_path = util.save_image(image, file_ext, f"{event}_{movie}_{counter[event]}")
                     output_dict[f"{event}_{counter[event]}"].append(file_path)
-                """
 
         result.append(output_dict)
-
     return result
